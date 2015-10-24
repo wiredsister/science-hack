@@ -39,16 +39,14 @@ let () =
         (* Dom.appendChild (Dom_html.document##.head) script; *)
 
         main_window_now##loadUrl
-          (Js.string
-             (Printf.sprintf
-                "file://%s/index.html" (Nodejs_globals.__dirname ())));
+          !$(Printf.sprintf "file://%s/index.html" (Nodejs_globals.__dirname ()));
 
         main_window_now##openDevTools ();
 
         main_window_now##on
-          (Js.string "closed")
-          (Js.wrap_callback begin fun () ->
+          !$"closed"
+          !@begin fun () ->
               main_window := Js.null
-            end)
+            end
 
       end
