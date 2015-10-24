@@ -1,5 +1,8 @@
 {
-  "name"    : "fruitbat",
-  "version" : "0.1.0",
-  "main"    : "fruitbat.js"
+  "name": "fruitbat",
+  "version": "0.1.0",
+  "main": "fruitbat.js",
+  "devDependencies": {
+    "bower": "^1.6.5"
+  }
 }

@@ -7,3 +7,5 @@ fruitbat.cmo
 fruitbat.cmt
 fruitbat.js
 
+node_modules
+bower_components/

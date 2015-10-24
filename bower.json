@@ -1,0 +1,19 @@
+{
+  "name": "Fruit-Bat",
+  "version": "1.0",
+  "homepage": "https://github.com/fxfactorial/science-hack",
+  "authors": [
+    "Gina Maini <drawginadraw@gmail.com>"
+  ],
+  "description": "A publishing platform for scientists.",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "science"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "backbone": "~1.2.3"
+  }
+}
