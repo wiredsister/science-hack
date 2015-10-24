@@ -1,4 +1,4 @@
-
+open Nodejs
 
 let () =
   let app = Electron.App.require () in
@@ -7,7 +7,7 @@ let () =
     (Js.string "window-all-closed")
     (Js.wrap_callback begin fun () ->
         if (Js.to_string Nodejs.Process.process##.platform) <> "darwin"
-           then app##quit ()
+        then app##quit ()
       end);
   app##on
     (Js.string "ready")
@@ -21,6 +21,23 @@ let () =
           Js.Opt.get !main_window (fun () -> assert false)
         in
 
+        (* let web_con = main_window_now##.webContents in *)
+
+        (* print_endline (web_con##getUrl () |> Js.to_string); *)
+
+        (* Firebug.console##log web_con; *)
+
+        (* web_con##on *)
+        (*   !$"did-finish-load" *)
+        (*   !@ (fun () -> *)
+        (*       print_endline "loaded"); *)
+
+        (* print_endline (web_con##toString () |> Js.to_string); *)
+
+        (* let script = Dom_html.createScript Dom_html.document in *)
+        (* script##.src := !$"client/vendor/trix.js"; *)
+        (* Dom.appendChild (Dom_html.document##.head) script; *)
+
         main_window_now##loadUrl
           (Js.string
              (Printf.sprintf
@@ -32,6 +49,6 @@ let () =
           (Js.string "closed")
           (Js.wrap_callback begin fun () ->
               main_window := Js.null
-          end)
+            end)
 
       end)
