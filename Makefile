@@ -18,6 +18,6 @@ all:
 	@echo "Compiled"
 
 clean:
-	@rm -f mvp.cmi mvp.cmo mvp.cmt a.out
+	@rm -f fruitbat.cmi fruitbat.cmo fruitbat.cmt a.out
 
 .PHONY:clean
