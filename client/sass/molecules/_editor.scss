@@ -1,0 +1,18 @@
+form[name="editor"] {
+  padding: $base-padding * 4;
+  float: right;
+  height: 100%;
+  width: 75%;
+}
+
+trix-editor {
+  background-color: $white;
+  border: 1px solid darken($light-gray, 15%);
+  height: 50%;
+  margin: $base-padding * 4 0;
+  display: block;
+}
+
+.editor--publish-button  {
+  @include button($mint, $white);
+}
