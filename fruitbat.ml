@@ -4,14 +4,14 @@ let () =
   let app = Electron.App.require () in
   let main_window = ref Js.null in
   app##on
-    (Js.string "window-all-closed")
-    (Js.wrap_callback begin fun () ->
+    !$"window-all-closed"
+    !@begin fun () ->
         if (Js.to_string Nodejs.Process.process##.platform) <> "darwin"
         then app##quit ()
-      end);
+      end;
   app##on
-    (Js.string "ready")
-    (Js.wrap_callback begin fun () ->
+    !$"ready"
+    !@begin fun () ->
 
         main_window :=
           Js.Opt.return (new%js Electron.Browser_window.browser_window
@@ -51,4 +51,4 @@ let () =
               main_window := Js.null
             end)
 
-      end)
+      end
