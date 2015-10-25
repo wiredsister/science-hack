@@ -23,20 +23,24 @@ let () =
 
         (* let web_con = main_window_now##.webContents in *)
 
+        let web_con : Electron.Web_contents.web_contents Js.t =
+          Js.Unsafe.get main_window_now "webContents"
+        in
+
         (* print_endline (web_con##getUrl () |> Js.to_string); *)
 
         (* Firebug.console##log web_con; *)
 
-        (* web_con##on *)
-        (*   !$"did-finish-load" *)
-        (*   !@ (fun () -> *)
-        (*       print_endline "loaded"); *)
+        web_con##on
+          !$"did-finish-load"
+          !@ (fun () ->
 
-        (* print_endline (web_con##toString () |> Js.to_string); *)
 
-        (* let script = Dom_html.createScript Dom_html.document in *)
-        (* script##.src := !$"client/vendor/trix.js"; *)
-        (* Dom.appendChild (Dom_html.document##.head) script; *)
+              (* let script = Dom_html.createScript Dom_html.document in *)
+              (* script##.src := !$"client/vendor/trix.js"; *)
+              (* Dom.appendChild (Dom_html.document##.head) script; *)
+
+              print_endline "loaded");
 
         main_window_now##loadUrl
           !$(Printf.sprintf "file://%s/index.html" (Nodejs_globals.__dirname ()));
