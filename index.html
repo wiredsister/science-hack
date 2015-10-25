@@ -4,26 +4,13 @@
 		<meta charset="UTF-8">
 		<title>Hello World!</title>
 		<link rel="stylesheet" media="all" href="client/css/main.css"/>
-		<script src="client/vendor/trix.js" type="text/js"></script>
-		<script type="text/javascript">
-		var el = document.querySelector('trix-editor');
-		document.write(el.editor.getDocument());
-		</script>
+		<script src="fruitbat_render.js"> </script>
 	</head>
 	<body>
-
-		<!-- This is the Trix Editor by Basecamp!
-		     Their documentation can be found at:
-		     https://github.com/basecamp/trix#readme
-		   -->
-
 		<form action="" name="editor">
 			<input id="_editor_" type="hidden" name="_editor_"/>
 			<trix-editor input="_editor_"></trix-editor>
 			<button class="editor--publish-button">Publish</button>
 		</form>
-
-		<!-- le javascript -->
-		<script src="client/js/main.js" type="text/js"></script>
 	</body>
 </html>

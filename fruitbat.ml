@@ -21,36 +21,14 @@ let () =
           Js.Opt.get !main_window (fun () -> assert false)
         in
 
-        (* let web_con = main_window_now##.webContents in *)
-
-        let web_con : Electron.Web_contents.web_contents Js.t =
-          Js.Unsafe.get main_window_now "webContents"
-        in
-
-        (* print_endline (web_con##getUrl () |> Js.to_string); *)
-
-        (* Firebug.console##log web_con; *)
-
-        web_con##on
-          !$"did-finish-load"
-          !@ (fun () ->
-
-
-              (* let script = Dom_html.createScript Dom_html.document in *)
-              (* script##.src := !$"client/vendor/trix.js"; *)
-              (* Dom.appendChild (Dom_html.document##.head) script; *)
-
-              print_endline "loaded");
-
         main_window_now##loadUrl
           !$(Printf.sprintf "file://%s/index.html" (Nodejs_globals.__dirname ()));
 
-        main_window_now##openDevTools ();
+        (* main_window_now##openDevTools (); *)
 
         main_window_now##on
           !$"closed"
           !@begin fun () ->
               main_window := Js.null
             end
-
       end
