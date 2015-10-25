@@ -7,6 +7,7 @@ $nav-offset: 50px;
   height: 100%;
   position: relative;
   padding-left: 2em;
+  font-family: "Kelly Slab";
 
   ul {
     list-style: none;
@@ -21,7 +22,6 @@ $nav-offset: 50px;
     display: block;
     padding: $base-padding;
     text-transform: uppercase;
-    font-family: "Helvetica Neue", "Helvetica Light", "Helvetica", sans serif;
     color: lighten($black, 10%);
     cursor: pointer;
     
@@ -48,7 +48,7 @@ $nav-offset: 50px;
     transform: rotate(-45deg);
     bottom: 0;
     right: 0;
-    left: -10px;
+    left: -20px;
     margin: 0 auto;
   }
 }
@@ -57,8 +57,8 @@ $nav-offset: 50px;
   border-radius: 50%;
   border: 1px solid darken($mint, 10%);
   background-color: $mint;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   position: absolute;
   top: $nav-offset;
   right: 0;
