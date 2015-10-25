@@ -1,18 +1,37 @@
-form[name="editor"] {
+.editor {
   padding: $base-padding * 4;
   float: right;
   height: 100%;
   width: 75%;
 }
 
-trix-editor {
-  background-color: $white;
-  border: 1px solid darken($light-gray, 15%);
-  height: 50%;
-  margin: $base-padding * 4 0;
-  display: block;
+.editor--publish-button  {
+  @include button($mint, fade-out($white, .1));
+  margin: 0 $base-padding;
+  float: right;
 }
 
-.editor--publish-button  {
-  @include button($mint, $white);
+.editor--draft-button {
+  @include button(darken($light-gray, 35%), fade-out($white, .1));
+  float: right;
+}
+
+.editor--paper {
+  background-color: $white;
+  border: 1px solid;
+  border-color: darken($light-gray, 15%);
+  display: block;
+  width: 100%;
+  height: 50%;
+  padding: $base-padding * 2;
+  margin: $base-padding * 4 0;
+  outline: none;
+  color: lighten($black, 40%);
+  font-family: "Helvetica Neue", "Helvetica Light", "Helvetica", sans serif;
+
+  &:focus {
+    border-color: $mint;
+    box-shadow: inset 0 0 18px -4px fade-out($mint, .5);
+    outline: none;
+  }
 }
