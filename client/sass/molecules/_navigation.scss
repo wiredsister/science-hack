@@ -24,7 +24,10 @@ $nav-offset: 50px;
     text-transform: uppercase;
     color: lighten($black, 10%);
     cursor: pointer;
-    
+
+    &:hover {
+      color: $mint;
+    }
 
     &:first-child {
       background-color: $light-gray;

@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Hello World!</title>
 		<link href='https://fonts.googleapis.com/css?family=Kelly+Slab' rel='stylesheet' type='text/css'>
+		<link href="./bower_components/trix/dist/trix.css" rel="stylesheet" media="all"/>
 		<link rel="stylesheet" media="all" href="client/css/main.css"/>
 		
 		<script type="text/javascript" src="fruitbat_render.js"></script>
@@ -12,9 +13,9 @@
 		<nav class="navigation">
 			<ul>
 				<li><div class="navigation--user-pic"></div></li>
-				<li>Find</li>
-				<li>Publish</li>
-				<li>Connect</li>
+				<li id="find">Find</li>
+				<li id="publish">Publish</li>
+				<li id="connect">Connect</li>
 				
 			</ul>
 		</nav>
@@ -23,9 +24,9 @@
 		     Their documentation can be found at:
 		     https://github.com/basecamp/trix#readme
 		   -->
-
 		<form action="" name="editor" class="editor">
 			<input id="_editor_" type="hidden" name=""/>
+			<label class="editor--section-title" for="paper">Abstract</label>
 			<trix-editor class="editor--paper" input="_editor_" name="paper"></trix-editor>
 			<button class="editor--draft-button">Save as draft</button>
 			<button class="editor--publish-button">Publish</button>

@@ -3,6 +3,26 @@
   float: right;
   height: 100%;
   width: 75%;
+
+  ul, ol, blockquote {
+    padding-left: 20px;
+  }
+
+  .button_group .active {
+    background: lighten($mint, 40%);
+  }
+
+  .button_group button {
+    outline: none;
+    border: none;
+    background-color: lighten($light-gray, 5%);
+    border-bottom: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($mint, 35%);
+    }
+  }
 }
 
 .editor--publish-button  {
@@ -34,4 +54,11 @@
     box-shadow: inset 0 0 18px -4px fade-out($mint, .5);
     outline: none;
   }
+}
+
+.editor--section-title {
+  display: block;
+  color: fade-out($black, .3);
+  font-size: 1.3em;
+  padding: .5em 0;
 }
